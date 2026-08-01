@@ -28,6 +28,55 @@ mit `minecraft:use_modifiers` (Aufladedauer) verknüpft. Beim Loslassen prüft
 verschießt bei ausreichender Dauer eine `minecraft:fireball`-Entität in
 Blickrichtung des Spielers.
 
+**Wichtig:** Das ist eine **eigene, custom Blaze Rod** (`feuerzauber:blaze_rod`)
+– Bedrock erlaubt es nicht, Verhalten an das echte Vanilla-Item
+(`minecraft:blaze_rod`) zu hängen. Sie sieht identisch aus und heißt auch
+"Blaze Rod", muss aber per Befehl geholt werden (siehe unten) – eine
+Blaze Rod, die man von einer Blaze erbeutet hat, funktioniert **nicht**.
+
+## Testbefehle (im Spiel-Chat)
+
+```
+/give @s feuerzauber:blaze_rod   -> Feuerball-Zauberstab
+/give @s stick                   -> einfacher Blitz-Test (siehe unten)
+```
+
+## Einfacher Test-Effekt zur Diagnose
+
+Da der Feuerball-Effekt mehrere bewegliche Teile hat (Custom Item,
+Aufladedauer, Projektil), gibt es zwei einfachere eingebaute Tests in
+`scripts/main.js`, um Schritt für Schritt einzugrenzen, wo es hakt:
+
+1. **Lädt das Script überhaupt?** Direkt nach dem Betreten der Welt
+   erscheint im Chat `[Feuerzauber] Addon geladen.`. Kommt diese Nachricht
+   nicht, wird das Script gar nicht ausgeführt (siehe Troubleshooting).
+2. **Funktioniert ein einfacher Klick-Effekt?** Mit einem normalen
+   `minecraft:stick` (Vanilla-Item, kein Custom-Component nötig) einmal
+   kurz klicken/tippen löst sofort einen Blitzeinschlag aus + Chat-Nachricht.
+   Das testet die Script-API unabhängig vom Custom Item / der
+   Aufladelogik.
+
+Beim Zauberstab selbst zeigt die Actionbar jetzt außerdem "Aufladen..."
+während des Haltens und "Losgelassen nach X s" beim Loslassen – so sieht
+man live, ob der Klick überhaupt registriert wird und wie lange gehalten
+wurde, auch ohne dass am Ende ein Feuerball fliegt.
+
+## Troubleshooting: "Es passiert nichts"
+
+1. **Beta APIs nicht aktiviert.** Beim Welt-Erstellen unter "Experimente"
+   muss "Beta APIs" (bzw. "Holiday Creator Features"/"Additional
+   Experimental Content Toggles", je nach Version) angehakt sein – sonst
+   läuft das Script überhaupt nicht, ohne sichtbare Fehlermeldung.
+2. **Beide Packs aktiviert?** Behavior *und* Resource Pack müssen in den
+   Welteinstellungen aktiviert sein, nicht nur eines.
+3. **Falsches Item.** Siehe oben – die echte/erbeutete Blaze Rod hat
+   keine Wirkung, nur die per `/give feuerzauber:blaze_rod` erzeugte.
+4. Erscheint schon `[Feuerzauber] Addon geladen.` nicht im Chat, liegt es
+   an 1./2. Erscheint sie, aber der Stick-Blitz-Test tut nichts, bitte
+   melden – dann liegt evtl. ein API-Versionsproblem vor
+   (`BP/manifest.json` → `@minecraft/server`-Version ggf. an die
+   installierte Minecraft-Version anpassen).
+
 ## Lokal testen (Desktop)
 
 1. Minecraft: Bedrock Edition (Preview empfohlen für aktuelle Script-API)
