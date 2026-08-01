@@ -28,7 +28,7 @@ mit `minecraft:use_modifiers` (Aufladedauer) verknüpft. Beim Loslassen prüft
 verschießt bei ausreichender Dauer eine `minecraft:fireball`-Entität in
 Blickrichtung des Spielers.
 
-## Lokal testen
+## Lokal testen (Desktop)
 
 1. Minecraft: Bedrock Edition (Preview empfohlen für aktuelle Script-API)
    installieren.
@@ -39,6 +39,27 @@ Blickrichtung des Spielers.
    "Beta APIs" (Experimental Features) erstellen.
 4. Blaze Rod in die Hand nehmen, Rechtsklick/Touch gedrückt halten und
    wieder loslassen.
+
+## Auf dem Smartphone testen (.mcpack / .mcaddon)
+
+`npm run package` ausführen (benötigt `zip` unter macOS/Linux bzw.
+PowerShell unter Windows). Das erzeugt in `dist/`:
+
+- `FeuerzauberAddon.mcaddon` – enthält BP **und** RP, zum direkten Import
+  (empfohlen).
+- `FeuerzauberAddon_BP.mcpack` / `FeuerzauberAddon_RP.mcpack` – die Packs
+  einzeln, falls `.mcaddon` mal nicht funktioniert.
+
+Datei(en) aufs Handy übertragen (z. B. per Cloud-Speicher/AirDrop/USB) und
+mit "Öffnen in Minecraft" importieren. Danach im Welt-Editor unter
+Behavior-/Resource-Packs aktivieren und "Beta APIs" einschalten.
+
+**"Import fehlgeschlagen"?** Das passiert, wenn das ganze Repo (inkl.
+`README.md`, `package.json` usw.) direkt in eine Zip gepackt und in
+`.mcpack` umbenannt wird. Minecraft erwartet pro `.mcpack` genau ein Pack
+mit `manifest.json` direkt im Zip-Root – kein Repo-Ordner drumherum und
+nicht BP+RP gemischt. `npm run package` baut die Dateien deshalb korrekt
+strukturiert.
 
 ## Nächste Schritte
 

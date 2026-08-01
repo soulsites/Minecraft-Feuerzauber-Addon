@@ -5,6 +5,7 @@
   "description": "Minecraft Bedrock Add-On: Feuerzauber",
   "type": "module",
   "scripts": {
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.js",
+    "package": "node scripts/package.js"
   }
 }
