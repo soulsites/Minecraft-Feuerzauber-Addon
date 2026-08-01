@@ -1,0 +1,11 @@
+{
+  "name": "minecraft-feuerzauber-addon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minecraft Bedrock Add-On: Feuerzauber",
+  "type": "module",
+  "scripts": {
+    "deploy": "node scripts/deploy.js",
+    "package": "node scripts/package.js"
+  }
+}
