@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Feuerzauber Addon",
+    "description": "Feuerzauber Addon - Resource Pack",
+    "uuid": "3200d6f1-d6b2-46b1-beac-0dfd28a972d2",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "df60eb81-a2d6-47ea-b426-b526e7f3170c",
+      "version": [1, 0, 0]
+    }
+  ]
+}

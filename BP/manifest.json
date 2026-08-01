@@ -1,0 +1,34 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Feuerzauber Addon",
+    "description": "Feuerzauber Addon - Behavior Pack",
+    "uuid": "c4515a08-8706-46d3-bcc0-98bfd97ff9a3",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "e7678dd2-2b41-4579-81a7-13994c4a5664",
+      "version": [1, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "da1a7e57-f3b6-4c24-ad33-c64f577da9ed",
+      "entry": "scripts/main.js",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.13.0"
+    },
+    {
+      "uuid": "3200d6f1-d6b2-46b1-beac-0dfd28a972d2",
+      "version": [1, 0, 0]
+    }
+  ]
+}
