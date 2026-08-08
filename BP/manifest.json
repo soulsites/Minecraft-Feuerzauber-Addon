@@ -50,15 +50,16 @@
     "version": [1, 0, 0],
 
     /* min_engine_version: Ab welcher Minecraft-Version funktioniert das Addon?
-       [1, 21, 0] = Minecraft 1.21.0 oder neuer
+       [1, 20, 0] = Minecraft 1.20.0 oder neuer
 
        Das ist wichtig, weil neue Minecraft-Features (wie Script API)
        nicht in älteren Versionen funktionieren!
 
-       Wenn du ein Addon für eine ältere Version schreibst,
-       ändere das hier auf z.B. [1, 20, 0]
+       Wir verwenden 1.20.0, um mit mehr Handys kompatibel zu sein!
+       Die Script API funktioniert ab Minecraft 1.20 - perfekt für
+       ältere Handy-Versionen.
     */
-    "min_engine_version": [1, 21, 0]
+    "min_engine_version": [1, 20, 0]
   },
 
   /* MODULES: Was ist alles in diesem Addon?
@@ -130,15 +131,16 @@
       */
       "module_name": "@minecraft/server",
 
-      /* version: "1.13.0" = Welche Version der API?
+      /* version: "1.5.0" = Welche Version der API?
          Verschiedene Minecraft-Versionen haben verschiedene API-Versionen:
-         - Minecraft 1.20 = @minecraft/server 1.5.0
+         - Minecraft 1.20 = @minecraft/server 1.5.0 ← KOMPATIBEL mit älteren Handys!
          - Minecraft 1.21 = @minecraft/server 1.13.0
 
+         Wir verwenden 1.5.0, um mit älteren Versionen zu funktionieren!
          Wenn dein Code nicht funktioniert, könnte es sein, dass die
          API-Version nicht zu deiner Minecraft-Version passt.
       */
-      "version": "1.13.0"
+      "version": "1.5.0"
     },
     {
       /* uuid: Das ist DIESES Addon - das Resource Pack!
