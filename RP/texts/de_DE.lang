@@ -1,2 +1,14 @@
-## Feuerzauber Addon
+## Feuerzauber Addon - DEUTSCHE ÜBERSETZUNG
+# Diese Datei definiert alle Texte, die der Spieler im Spiel SIEHT
+# Die Datei en_US.lang ist die englische Version
+
+# Das Format ist einfach: NAME=WERT
+# NAME = der interne Name (muss GENAU gleich in allen .lang-Dateien sein!)
+# WERT = was der Spieler auf Deutsch sieht
+
+# Beispiel:
+# Im Code: "item.feuerzauber:blaze_rod"
+# Im Spiel (Deutsch): "Blaze-Rute"
+# Im Spiel (Englisch): "Blaze Rod" (siehe en_US.lang)
+
 item.feuerzauber:blaze_rod=Blaze-Rute

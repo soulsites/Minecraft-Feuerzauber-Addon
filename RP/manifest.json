@@ -1,17 +1,69 @@
 {
+  /* RESOURCE PACK MANIFEST - Die "Schönheit" des Addons
+   *
+   * Während das Behavior Pack die LOGIK ist (Verhalten, Regeln),
+   * ist das Resource Pack die GRAFIK (Texturen, Sounds, Sprachen).
+   *
+   * Ein Minecraft Addon besteht IMMER aus zwei Teilen:
+   * 1. Behavior Pack (BP) = Wie funktioniert es? (Das was der Computer sieht)
+   * 2. Resource Pack (RP) = Wie sieht es aus? (Das was der Spieler sieht)
+   *
+   * BEIDE sind notwendig! Eins ohne das andere funktioniert nicht!
+   */
+
   "format_version": 2,
+
   "header": {
     "name": "Feuerzauber Addon",
+
+    /* Es ist wichtig zu schreiben, dass das Resource Pack ist!
+       So weiß der Nutzer, dass "RP" = "Resource Pack" = "Grafik"
+    */
     "description": "Feuerzauber Addon - Resource Pack",
+
+    /* uuid: MUSS GENAU die gleiche UUID sein wie die "dependencies" uuid
+       in BP/manifest.json!
+
+       Wenn diese UUIDs nicht passen, kann Minecraft das Addon nicht laden,
+       weil es nicht weiß, dass BP und RP zusammengehören.
+
+       Regel: Wenn du neue Addons erstellst, muss JEDES eine andere UUID haben,
+       aber BP und RP des GLEICHEN Addons müssen die GLEICHE UUID teilen.
+    */
     "uuid": "3200d6f1-d6b2-46b1-beac-0dfd28a972d2",
+
     "version": [1, 0, 0],
+
     "min_engine_version": [1, 21, 0]
   },
+
+  /* MODULES: Das Resource Pack hat normalerweise nur EIN Modul vom Typ "resources" */
   "modules": [
     {
+      /* type: "resources" = Dies ist ein Ressourcen-Modul
+         Es enthält alle Grafik- und Audio-Dateien:
+         - Texturen (RP/textures/items/blaze_rod.png)
+         - Sounds (RP/sounds/*)
+         - Sprachen/Übersetzungen (RP/texts/*)
+         - Modelle und Animationen
+      */
       "type": "resources",
+
+      /* uuid: Eindeutige ID für dieses Ressourcen-Modul
+         (Alle UUIDs müssen unterschiedlich sein!)
+      */
       "uuid": "df60eb81-a2d6-47ea-b426-b526e7f3170c",
+
       "version": [1, 0, 0]
     }
   ]
+
+  /* WICHTIG: Das Resource Pack hat KEINE "dependencies"!
+     Warum nicht? Weil es nur Grafiken und Töne enthält,
+     die nicht von anderen Dateien abhängen.
+
+     Das Behavior Pack MUSS wissen, dass es ein Resource Pack braucht
+     (deshalb "dependencies" in BP/manifest.json),
+     aber das Resource Pack selbst braucht nichts von anderen.
+  */
 }
