@@ -1,24 +1,100 @@
 {
   "format_version": "1.21.0",
+
+  /* MINECRAFT ITEM DEFINITION - BLAZE ROD ZAUBERSTAB
+   *
+   * Dies ist eine JSON-Datei, die ein neues Minecraft Item definiert.
+   * JSON = JavaScript Object Notation - ein Format zum Speichern von Daten
+   *
+   * Struktur:
+   * - format_version = Welche Minecraft-Version? (1.21.0 = Neueste)
+   * - minecraft:item = Hier kommt die eigentliche Item-Definition
+   */
+
   "minecraft:item": {
+    /* BESCHREIBUNG: Das Item wird hier der Welt bekannt gemacht */
     "description": {
+      /* identifier = Der eindeutige Name dieses Items
+         Format: "namespace:itemname"
+         - namespace (feuerzauber) = Der Name des Addons (verhindert Konflikte mit anderen Items)
+         - itemname (blaze_rod) = Der interne Name des Items
+
+         WICHTIG: Der Namespace MUSS zu DEINEM Addon passen!
+         Wenn du dein Addon "mein_addon" nennst, muss der Namespace auch "mein_addon" sein.
+      */
       "identifier": "feuerzauber:blaze_rod",
+
+      /* menu_category = In welchem Kreativ-Menü soll dieses Item sichtbar sein?
+         category: "equipment" = Es ist eine Ausrüstung (wie Schwerter)
+         group: "itemGroup.name.sword" = Es wird bei den Schwertern angezeigt
+      */
       "menu_category": {
         "category": "equipment",
         "group": "itemGroup.name.sword"
       }
     },
+
+    /* KOMPONENTEN: Das ist die Logik des Items - wie verhält es sich? */
     "components": {
+
+      /* max_stack_size: 1 = Man kann immer nur EINE Blaze Rod haben
+         (So wie in Minecraft - man kann echte Items nicht stapeln)
+         Wert 1 = nicht stapelbar
+         Wert 64 = stapelbar bis 64
+      */
       "minecraft:max_stack_size": 1,
+
+      /* hand_equipped: true = Das Item wird in der Hand gehalten (wie ein Schwert)
+         nicht auf dem Rücken oder in einer Tasche - sondern in der Spielerhand sichtbar
+      */
       "minecraft:hand_equipped": true,
+
+      /* icon: "blaze_rod" = Welche Textur für das Icon im Inventar?
+         Das Icon muss in RP/textures/items/blaze_rod.png existieren
+         (In unserem Fall nehmen wir die Vanilla-Blaze-Rod-Textur)
+      */
       "minecraft:icon": "blaze_rod",
+
+      /* use_modifiers: Wie lange kann man die Taste halten?
+         Das ist WICHTIG für den Zauberstab!
+      */
       "minecraft:use_modifiers": {
+        /* use_duration: 5 = Die Taste kann maximal 5 Ticks gedrückt werden
+           Ein Tick = 1/20 Sekunde in Minecraft = 50 Millisekunden
+           5 Ticks = 5/20 = 0.25 Sekunden
+
+           ABER: Das ist das MINIMUM, das Gameplay MUSS länger halten
+           Der Spieler kann länger halten, aber wir messen dann manuell
+           in main.js wie lange (event.useDuration).
+        */
         "use_duration": 5,
+
+        /* movement_modifier: 0.35 = Der Spieler kann mit 35% Geschwindigkeit laufen
+           während er den Zauberstab auflädt
+           1.0 = normale Geschwindigkeit
+           0.35 = nur 35% der Geschwindigkeit (langsamer)
+           0.0 = kann gar nicht laufen (bleibt stehen)
+        */
         "movement_modifier": 0.35
       },
+
+      /* use_animation: "bow" = Welche Animation soll gespielt werden?
+         "bow" = Die Bogen-Lade-Animation (perfekt für unseren Zauberstab!)
+         Andere Optionen: "eat", "drink", "block", "crossbow", etc.
+      */
       "minecraft:use_animation": "bow",
+
+      /* custom_components: Das ist die Verbindung zum JavaScript-Skript!
+         Hier listen wir die Namen der Custom Components auf, die
+         in main.js registriert wurden.
+      */
       "minecraft:custom_components": [
         "feuerzauber:blaze_rod_fireball"
+        /* Das muss GENAU zu dem Namen in main.js passen:
+           itemComponentRegistry.registerCustomComponent("feuerzauber:blaze_rod_fireball", ...)
+
+           Wenn die Namen nicht passen, funktioniert das Item nicht!
+        */
       ]
     }
   }

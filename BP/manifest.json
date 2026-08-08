@@ -1,33 +1,161 @@
 {
+  /* BEHAVIOR PACK MANIFEST - Das ist die "Bedienungsanleitung" des Addons
+   *
+   * Minecraft muss wissen:
+   * - Wie heißt das Addon? (name)
+   * - Was ist da drin? (modules)
+   * - Braucht es andere Addons? (dependencies)
+   * - Welche Version von Minecraft? (min_engine_version)
+   *
+   * Diese Datei ist ESSENTIELL - ohne sie funktioniert das gesamte Addon nicht!
+   * Minecraft liest diese Datei zuerst, bevor es irgendetwas andere macht.
+   */
+
+  /* format_version: 2 = Das Format dieser JSON-Datei
+     Es gibt verschiedene Versionen (1, 2, etc.)
+     Version 2 ist die neueste und wird in modernen Minecraft-Versionen genutzt.
+  */
   "format_version": 2,
+
+  /* HEADER: Metadaten über dein Addon */
   "header": {
+    /* name: Der Name, der dem Spieler angezeigt wird */
     "name": "Feuerzauber Addon",
+
+    /* description: Eine kurze Beschreibung, was das Addon macht */
     "description": "Feuerzauber Addon - Behavior Pack",
+
+    /* uuid: Eindeutige ID für DIESES Addon (nicht verändern!)
+       UUID = Universally Unique Identifier
+       Das ist wie eine Seriennummer - kein anderes Addon hat diese ID
+
+       Wenn du dein eigenes Addon schreibst, brauchst du eine NEUE uuid!
+       (Mit einem UUID-Generator generieren: https://www.uuidgenerator.net)
+
+       WICHTIG: Jedes Addon hat eine ANDERE uuid, sonst gibt es Konflikte!
+    */
     "uuid": "c4515a08-8706-46d3-bcc0-98bfd97ff9a3",
+
+    /* version: Welche Version des Addons ist das?
+       [1, 0, 0] = Große.Mittlere.Kleine Version (Major.Minor.Patch)
+       - 1 = Erste Hauptversion
+       - 0 = Keine mittleren Updates
+       - 0 = Keine kleinen Bugfixes
+
+       Wenn du Änderungen machst:
+       - Neuer Sound? [1, 0, 1]
+       - Neues Item? [1, 1, 0]
+       - Komplett überarbeitetes Addon? [2, 0, 0]
+    */
     "version": [1, 0, 0],
+
+    /* min_engine_version: Ab welcher Minecraft-Version funktioniert das Addon?
+       [1, 21, 0] = Minecraft 1.21.0 oder neuer
+
+       Das ist wichtig, weil neue Minecraft-Features (wie Script API)
+       nicht in älteren Versionen funktionieren!
+
+       Wenn du ein Addon für eine ältere Version schreibst,
+       ändere das hier auf z.B. [1, 20, 0]
+    */
     "min_engine_version": [1, 21, 0]
   },
+
+  /* MODULES: Was ist alles in diesem Addon?
+     Es gibt verschiedene Typen:
+     - data = Daten (Items, Blöcke, Rezepte) - nur JSON
+     - script = Skripte (JavaScript) - die Logik des Addons
+     - world_template = Eine vorgefertigte Welt
+  */
   "modules": [
     {
+      /* type: "data" = Dies ist ein Daten-Modul
+         Ein Daten-Modul enthält alle JSON-Dateien:
+         - Items (BP/items/blaze_rod.json)
+         - Blöcke, Rezepte, Strukturen, etc.
+      */
       "type": "data",
+
+      /* uuid: Eindeutige ID für dieses Modul
+         (Nicht verwechseln mit der Addon-UUID!)
+         Jedes Modul braucht eine eigene uuid.
+      */
       "uuid": "e7678dd2-2b41-4579-81a7-13994c4a5664",
+
+      /* version: Versionnummer des Daten-Moduls
+         Meist [1, 0, 0] am Anfang
+      */
       "version": [1, 0, 0]
     },
     {
+      /* type: "script" = Dies ist ein Skript-Modul
+         Das Skript-Modul führt JavaScript-Code aus!
+         Das ist die "Magie" - hier passiert die echte Logik.
+      */
       "type": "script",
+
+      /* language: "javascript" = Welche Programmiersprache?
+         Nur JavaScript wird unterstützt (Stand Minecraft 1.21)
+         Zukünftig könnte es auch andere Sprachen geben.
+      */
       "language": "javascript",
+
+      /* uuid: Eindeutige ID für dieses Skript-Modul */
       "uuid": "da1a7e57-f3b6-4c24-ad33-c64f577da9ed",
+
+      /* entry: "scripts/main.js" = Welche Datei soll ausgeführt werden?
+         Das ist die ERSTE Datei, die Minecraft lädt.
+         Von dort aus kannst du andere Dateien importieren.
+      */
       "entry": "scripts/main.js",
+
+      /* version: Versionnummer des Skript-Moduls */
       "version": [1, 0, 0]
     }
   ],
+
+  /* DEPENDENCIES: Braucht dieses Addon andere Addons oder Minecraft-Features?
+     Ein Addon kann von anderen abhängen - genauso wie ein JavaScript-Projekt
+     externe Bibliotheken brauchen kann.
+  */
   "dependencies": [
     {
+      /* module_name: "@minecraft/server" = Die offizielle Minecraft Script API
+         Das ist eine Bibliothek von Minecraft, die der JavaScript-Code nutzt.
+
+         Imports in main.js:
+         import { world, system } from "@minecraft/server";
+
+         Das importiert Funktionen aus dieser Bibliothek!
+      */
       "module_name": "@minecraft/server",
+
+      /* version: "1.13.0" = Welche Version der API?
+         Verschiedene Minecraft-Versionen haben verschiedene API-Versionen:
+         - Minecraft 1.20 = @minecraft/server 1.5.0
+         - Minecraft 1.21 = @minecraft/server 1.13.0
+
+         Wenn dein Code nicht funktioniert, könnte es sein, dass die
+         API-Version nicht zu deiner Minecraft-Version passt.
+      */
       "version": "1.13.0"
     },
     {
+      /* uuid: Das ist DIESES Addon - das Resource Pack!
+
+         Ein Addon besteht aus zwei Teilen:
+         1. Behavior Pack (BP) = Die Logik und Daten
+         2. Resource Pack (RP) = Die Texturen, Sounds, Animationen
+
+         Das Behavior Pack BRAUCHT das Resource Pack, sonst
+         hat das Item keine Textur und keine Sprache!
+
+         Die uuid muss GENAU zu der uuid des Resource Packs passen:
+         (Siehe RP/manifest.json)
+      */
       "uuid": "3200d6f1-d6b2-46b1-beac-0dfd28a972d2",
+
+      /* version: Die Version des Resource Packs muss auch passen */
       "version": [1, 0, 0]
     }
   ]
