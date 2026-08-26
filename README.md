@@ -24,9 +24,14 @@ Feuerball aus.
 
 Technisch wird das Item über eine `minecraft:custom_components`-Komponente
 mit `minecraft:use_modifiers` (Aufladedauer) verknüpft. Beim Loslassen prüft
-`scripts/main.js`, wie lange das Item gehalten wurde (`onCompleteUse`), und
-verschießt bei ausreichender Dauer eine `minecraft:fireball`-Entität in
-Blickrichtung des Spielers.
+`scripts/main.js`, wie lange das Item gehalten wurde (`itemStopUse`), und
+verschießt bei ausreichender Dauer eine `minecraft:small_fireball`-Entität in
+Blickrichtung des Spielers – denselben Projektiltyp verwendet auch eine Blaze.
+
+Eine kommentierte Führung durch **alle** Projektdateien steht in
+[`CODE_ERKLAERT.md`](CODE_ERKLAERT.md). Die JavaScript-Dateien sind zusätzlich
+direkt im Quellcode ausführlich kommentiert. JSON erlaubt keine Kommentare und
+wird deshalb in der Begleitdatei Feld für Feld erklärt.
 
 **Wichtig:** Das ist eine **eigene, custom Blaze Rod** (`feuerzauber:blaze_rod`)
 – Bedrock erlaubt es nicht, Verhalten an das echte Vanilla-Item
@@ -63,10 +68,11 @@ wurde, auch ohne dass am Ende ein Feuerball fliegt.
 
 ## Troubleshooting: "Es passiert nichts"
 
-1. **Beta APIs nicht aktiviert.** Beim Welt-Erstellen unter "Experimente"
-   muss "Beta APIs" (bzw. "Holiday Creator Features"/"Additional
-   Experimental Content Toggles", je nach Version) angehakt sein – sonst
-   läuft das Script überhaupt nicht, ohne sichtbare Fehlermeldung.
+1. **Script-/Experiment-Einstellungen prüfen.** Bei älteren Bedrock-Versionen
+   muss beim Welt-Erstellen unter "Experimente" unter Umständen "Beta APIs"
+   aktiviert sein. Die verwendete API-Version `1.13.0` selbst gehört zum
+   stabilen Track; je nach Minecraft-Version und Plattform können Custom Items
+   trotzdem zusätzliche Creator-Schalter benötigen.
 2. **Beide Packs aktiviert?** Behavior *und* Resource Pack müssen in den
    Welteinstellungen aktiviert sein, nicht nur eines.
 3. **Falsches Item.** Siehe oben – die echte/erbeutete Blaze Rod hat

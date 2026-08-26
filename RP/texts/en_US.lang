@@ -1,2 +1,11 @@
-## Feuerzauber Addon
+## Feuerzauber Addon - ENGLISCHE ÜBERSETZUNG
+# Diese Datei definiert alle Texte, die der Spieler im Spiel SIEHT
+
+# Das Format ist einfach: NAME=WERT
+# NAME = der interne Name (aus dem Code)
+# WERT = was der Spieler sieht
+
+# Beispiel: Im Code steht "item.feuerzauber:blaze_rod"
+# Im Spiel sieht der Spieler: "Blaze Rod"
+
 item.feuerzauber:blaze_rod=Blaze Rod
