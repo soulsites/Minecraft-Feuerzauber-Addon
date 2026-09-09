@@ -12,6 +12,9 @@ system.run(() => {
   world.sendMessage(
     "§6[Feuerzauber]§r Test-Schwert holen: §7/give @s feuerzauber:test_sword"
   );
+  world.sendMessage(
+    "§6[Feuerzauber]§r Pinke Variante (9 Schaden): §7/give @s feuerzauber:test_sword_pink"
+  );
 });
 
 // Simple sanity-check effect that needs no custom item at all: right-click

@@ -4,6 +4,9 @@
   "texture_data": {
     "test_sword": {
       "textures": "textures/items/test_sword"
+    },
+    "test_sword_pink": {
+      "textures": "textures/items/test_sword_pink"
     }
   }
 }

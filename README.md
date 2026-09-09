@@ -31,6 +31,13 @@ Texturen im Resource Pack korrekt eingebunden werden (`item_texture.json`
 /give @s feuerzauber:test_sword
 ```
 
+Zusätzlich gibt es die Variante `feuerzauber:test_sword_pink` – identisch,
+aber mit pinker statt lila Klinge und **9 statt 7 Schaden**:
+
+```
+/give @s feuerzauber:test_sword_pink
+```
+
 ## Erstes Feature: Feuerball mit der Blaze Rod
 
 Hält man die Blaze Rod in der Hand und klickt/tippt **länger** (mind. 0.5
