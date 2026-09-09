@@ -21,6 +21,12 @@ const LONG_PRESS_THRESHOLD_TICKS =
 // Fehlt sie im Spiel, wurde das Behavior-Pack-Script gar nicht geladen.
 system.run(() => {
   world.sendMessage("§6[Feuerzauber]§r Addon geladen.");
+  world.sendMessage(
+    "§6[Feuerzauber]§r Test-Schwert holen: §7/give @s feuerzauber:test_sword"
+  );
+  world.sendMessage(
+    "§6[Feuerzauber]§r Blaue Variante (9 Schaden): §7/give @s feuerzauber:test_sword_blue"
+  );
 });
 
 // Diagnose-Hilfe: Ein normaler Vanilla-Stock benötigt kein Custom Item.

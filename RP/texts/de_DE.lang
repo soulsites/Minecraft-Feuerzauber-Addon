@@ -12,3 +12,5 @@
 # Im Spiel (Englisch): "Blaze Rod" (siehe en_US.lang)
 
 item.feuerzauber:blaze_rod=Blaze-Rute
+item.feuerzauber:test_sword=Test-Schwert
+item.feuerzauber:test_sword_blue=Test-Schwert (Blau)

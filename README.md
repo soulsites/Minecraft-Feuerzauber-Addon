@@ -9,10 +9,34 @@ Add-On-Grundgerüst (Behavior Pack + Resource Pack + Script API).
 BP/                     Behavior Pack
   manifest.json
   items/blaze_rod.json  Item-Definition (Blaze Rod + Custom Component)
+  items/test_sword.json Item-Definition (Test-Schwert mit eigener Textur)
   scripts/main.js        Script-API Logik
 RP/                     Resource Pack
   manifest.json
+  textures/items/test_sword.png  Eigene Textur fürs Test-Schwert
+  textures/item_texture.json     Mapping Item -> Textur
   texts/                 Übersetzungen (en_US, de_DE)
+```
+
+## Test-Schwert mit eigener Textur
+
+`feuerzauber:test_sword` ist ein einfaches Schwert (Schaden 7, normale
+Schwert-Mechanik/-Tags) mit einer eigenen, im Repo mitgelieferten
+16x16-Textur (lila Klinge mit türkisen "Magie"-Glanzpunkten, Gold-Parierstange)
+statt einer Vanilla-Textur. Dient als Vorlage/Test dafür, dass eigene
+Texturen im Resource Pack korrekt eingebunden werden (`item_texture.json`
+→ `minecraft:icon` im Item).
+
+```
+/give @s feuerzauber:test_sword
+```
+
+Zusätzlich gibt es die Variante `feuerzauber:test_sword_blue` – identisch,
+aber mit blauer Klinge im Blauton des Warden-"Sonic Boom"-Effekts statt
+lila und **9 statt 7 Schaden**:
+
+```
+/give @s feuerzauber:test_sword_blue
 ```
 
 ## Erstes Feature: Feuerball mit der Blaze Rod

@@ -9,3 +9,5 @@
 # Im Spiel sieht der Spieler: "Blaze Rod"
 
 item.feuerzauber:blaze_rod=Blaze Rod
+item.feuerzauber:test_sword=Test Sword
+item.feuerzauber:test_sword_blue=Test Sword (Blue)
