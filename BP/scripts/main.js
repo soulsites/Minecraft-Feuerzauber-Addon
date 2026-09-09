@@ -9,6 +9,9 @@ const FIREBALL_LAUNCH_DISTANCE = 1.5;
 // Resource Packs).
 system.run(() => {
   world.sendMessage("§6[Feuerzauber]§r Addon geladen.");
+  world.sendMessage(
+    "§6[Feuerzauber]§r Test-Schwert holen: §7/give @s feuerzauber:test_sword"
+  );
 });
 
 // Simple sanity-check effect that needs no custom item at all: right-click
