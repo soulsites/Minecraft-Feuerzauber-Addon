@@ -13,7 +13,7 @@ system.run(() => {
     "§6[Feuerzauber]§r Test-Schwert holen: §7/give @s feuerzauber:test_sword"
   );
   world.sendMessage(
-    "§6[Feuerzauber]§r Pinke Variante (9 Schaden): §7/give @s feuerzauber:test_sword_pink"
+    "§6[Feuerzauber]§r Blaue Variante (9 Schaden): §7/give @s feuerzauber:test_sword_blue"
   );
 });
 

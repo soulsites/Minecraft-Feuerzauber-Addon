@@ -31,11 +31,12 @@ Texturen im Resource Pack korrekt eingebunden werden (`item_texture.json`
 /give @s feuerzauber:test_sword
 ```
 
-Zusätzlich gibt es die Variante `feuerzauber:test_sword_pink` – identisch,
-aber mit pinker statt lila Klinge und **9 statt 7 Schaden**:
+Zusätzlich gibt es die Variante `feuerzauber:test_sword_blue` – identisch,
+aber mit blauer Klinge im Blauton des Warden-"Sonic Boom"-Effekts statt
+lila und **9 statt 7 Schaden**:
 
 ```
-/give @s feuerzauber:test_sword_pink
+/give @s feuerzauber:test_sword_blue
 ```
 
 ## Erstes Feature: Feuerball mit der Blaze Rod

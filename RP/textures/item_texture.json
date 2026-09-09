@@ -5,8 +5,8 @@
     "test_sword": {
       "textures": "textures/items/test_sword"
     },
-    "test_sword_pink": {
-      "textures": "textures/items/test_sword_pink"
+    "test_sword_blue": {
+      "textures": "textures/items/test_sword_blue"
     }
   }
 }
