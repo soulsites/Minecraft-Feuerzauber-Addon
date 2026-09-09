@@ -1,17 +1,17 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Warden 1.10",
-    "description": "Warden 1.10 - Resource Pack",
+    "name": "Warden 1.11",
+    "description": "Warden 1.11 - Resource Pack",
     "uuid": "3200d6f1-d6b2-46b1-beac-0dfd28a972d2",
-    "version": [1, 0, 10],
+    "version": [1, 0, 11],
     "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "resources",
       "uuid": "df60eb81-a2d6-47ea-b426-b526e7f3170c",
-      "version": [1, 0, 10]
+      "version": [1, 0, 11]
     }
   ]
 }
