@@ -3,6 +3,15 @@
 Ein Minecraft: Bedrock Edition Add-On, gebaut auf dem offiziellen Mojang
 Add-On-Grundgerüst (Behavior Pack + Resource Pack + Script API).
 
+## Versionierung
+
+Der sichtbare Pack-Name enthält die Versionsnummer (aktuell **"Warden
+1.10"**) und steigt bei jeder Änderung, damit man in Minecrafts
+Speicher-Übersicht sofort erkennt, ob die neueste Version installiert ist.
+Bei jedem Update anpassen (`BP/manifest.json` und `RP/manifest.json`,
+jeweils `header.name`/`header.description` und alle `version`-Felder auf
+denselben Patch-Stand).
+
 ## Projektstruktur
 
 ```
