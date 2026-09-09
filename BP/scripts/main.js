@@ -15,6 +15,12 @@ system.run(() => {
   world.sendMessage(
     "§6[Feuerzauber]§r Blaue Variante (9 Schaden): §7/give @s feuerzauber:test_sword_blue"
   );
+  world.sendMessage(
+    "§6[Feuerzauber]§r Blaue Rüstung (stärker als Netherit): §7/give @s feuerzauber:armor_blue_helmet §7usw."
+  );
+  world.sendMessage(
+    "§6[Feuerzauber]§r Pinke Rüstung (~Diamant): §7/give @s feuerzauber:armor_pink_helmet §7usw."
+  );
 });
 
 // Simple sanity-check effect that needs no custom item at all: right-click

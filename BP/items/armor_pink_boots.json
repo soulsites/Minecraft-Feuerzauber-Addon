@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "feuerzauber:armor_pink_boots",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.boots"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": false,
+      "minecraft:icon": "armor_pink_boots",
+      "minecraft:display_name": {
+        "value": "Stiefel (Pink)"
+      },
+      "minecraft:durability": {
+        "max_durability": 429
+      },
+      "minecraft:armor": {
+        "protection_value": 3
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.feet"
+      },
+      "minecraft:enchantable": {
+        "value": 10,
+        "slot": "armor_feet"
+      }
+    }
+  }
+}

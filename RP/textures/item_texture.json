@@ -7,6 +7,30 @@
     },
     "test_sword_blue": {
       "textures": "textures/items/test_sword_blue"
+    },
+    "armor_blue_helmet": {
+      "textures": "textures/items/armor_blue_helmet"
+    },
+    "armor_blue_chestplate": {
+      "textures": "textures/items/armor_blue_chestplate"
+    },
+    "armor_blue_leggings": {
+      "textures": "textures/items/armor_blue_leggings"
+    },
+    "armor_blue_boots": {
+      "textures": "textures/items/armor_blue_boots"
+    },
+    "armor_pink_helmet": {
+      "textures": "textures/items/armor_pink_helmet"
+    },
+    "armor_pink_chestplate": {
+      "textures": "textures/items/armor_pink_chestplate"
+    },
+    "armor_pink_leggings": {
+      "textures": "textures/items/armor_pink_leggings"
+    },
+    "armor_pink_boots": {
+      "textures": "textures/items/armor_pink_boots"
     }
   }
 }

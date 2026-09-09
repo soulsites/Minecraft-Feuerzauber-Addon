@@ -1,0 +1,36 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "feuerzauber:armor_blue_helmet",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.helmet"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": false,
+      "minecraft:icon": "armor_blue_helmet",
+      "minecraft:display_name": {
+        "value": "Helm (Blau)"
+      },
+      "minecraft:durability": {
+        "max_durability": 450
+      },
+      "minecraft:armor": {
+        "protection_value": 4
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.head"
+      },
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "armor_head"
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.12
+      }
+    }
+  }
+}

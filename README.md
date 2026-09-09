@@ -10,11 +10,17 @@ BP/                     Behavior Pack
   manifest.json
   items/blaze_rod.json  Item-Definition (Blaze Rod + Custom Component)
   items/test_sword.json Item-Definition (Test-Schwert mit eigener Textur)
+  items/armor_*.json    Item-Definitionen der Blau-/Pink-Rüstungssets
+  entities/fireball.json Eigene spawnbare Feuerball-Entity
   scripts/main.js        Script-API Logik
 RP/                     Resource Pack
   manifest.json
   textures/items/test_sword.png  Eigene Textur fürs Test-Schwert
+  textures/items/armor_*.png     Inventar-Icons der Rüstungsteile
+  textures/models/armor/         Rüstungs-Layer-Texturen (blue.png, pink.png)
   textures/item_texture.json     Mapping Item -> Textur
+  attachables/armor_*.json       Rendering der Rüstung am Spielermodell
+  entity/fireball.json           Client-Entity für den Feuerball
   texts/                 Übersetzungen (en_US, de_DE)
 ```
 
@@ -37,6 +43,47 @@ lila und **9 statt 7 Schaden**:
 
 ```
 /give @s feuerzauber:test_sword_blue
+```
+
+## Rüstungssets: Blau (> Netherit) und Pink (~ Diamant)
+
+Zwei komplette 4-teilige Rüstungssets (Helm, Brustplatte, Beinschutz,
+Stiefel), passend zum Test-Schwert eingefärbt. Optik über eigene Texturen
+(`RP/textures/models/armor/blue.png` / `pink.png`), auf den vorhandenen
+Vanilla-Rüstungsgeometrien (`geometry.humanoid.armor.*`) via Attachables
+(`RP/attachables/`) gerendert.
+
+**Wichtig:** Bedrocks Item-System erlaubt bei eigenen Items nur
+Schutzwert (`protection_value`), Haltbarkeit und Rückstoßresistenz als
+einstellbare Werte – die Java-typische "Zähigkeit" (toughness) lässt sich
+für Custom-Items nicht setzen.
+
+- **Blau** – stärker als Netherit in allen einstellbaren Werten (Schutz,
+  Haltbarkeit, Rückstoßresistenz):
+
+  | Teil        | Schutz | Haltbarkeit | Rückstoß-Res. |
+  |-------------|-------:|------------:|---------------:|
+  | Helm        | 4      | 450         | 0.12           |
+  | Brustplatte | 9      | 650         | 0.12           |
+  | Beinschutz  | 7      | 600         | 0.12           |
+  | Stiefel     | 4      | 520         | 0.12           |
+
+  (Netherit zum Vergleich: Schutz 3/8/6/3, Haltbarkeit 407/592/555/481,
+  Rückstoßresistenz je 0.1)
+
+- **Pink** – exakt Diamant-Werte (Schutz 3/8/6/3, Haltbarkeit
+  363/528/495/429, keine Rückstoßresistenz).
+
+```
+/give @s feuerzauber:armor_blue_helmet
+/give @s feuerzauber:armor_blue_chestplate
+/give @s feuerzauber:armor_blue_leggings
+/give @s feuerzauber:armor_blue_boots
+
+/give @s feuerzauber:armor_pink_helmet
+/give @s feuerzauber:armor_pink_chestplate
+/give @s feuerzauber:armor_pink_leggings
+/give @s feuerzauber:armor_pink_boots
 ```
 
 ## Erstes Feature: Feuerball mit der Blaze Rod
