@@ -18,11 +18,9 @@
       "minecraft:durability": {
         "max_durability": 520
       },
-      "minecraft:armor": {
-        "protection_value": 4
-      },
       "minecraft:wearable": {
-        "slot": "slot.armor.feet"
+        "slot": "slot.armor.feet",
+        "protection": 4
       },
       "minecraft:enchantable": {
         "value": 15,

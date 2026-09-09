@@ -18,11 +18,9 @@
       "minecraft:durability": {
         "max_durability": 528
       },
-      "minecraft:armor": {
-        "protection_value": 8
-      },
       "minecraft:wearable": {
-        "slot": "slot.armor.chest"
+        "slot": "slot.armor.chest",
+        "protection": 8
       },
       "minecraft:enchantable": {
         "value": 10,

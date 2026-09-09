@@ -9,19 +9,19 @@
       },
       "textures": {
         "default": "textures/models/armor/blue",
-        "enchanted": "textures/misc/enchanted_item_glint"
+        "enchanted": "textures/misc/enchanted_actor_glint"
       },
       "geometry": {
         "default": "geometry.humanoid.armor.chestplate"
-      },
-      "scripts": {
-        "parent_setup": "variable.is_paperdoll = 0.0;"
       },
       "render_controllers": [
         "controller.render.armor"
       ],
       "item": {
         "slot": "slot.armor.chest"
+      },
+      "scripts": {
+        "parent_setup": "variable.chest_layer_visible = 0.0;"
       }
     }
   }
