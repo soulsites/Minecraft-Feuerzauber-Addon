@@ -54,22 +54,50 @@ system.beforeEvents.startup.subscribe(({ itemComponentRegistry }) => {
   });
 });
 
+// Speed of the fireball in blocks/tick. shoot() takes the vector as-is, so
+// the near-unit-length view direction alone barely moves the fireball -
+// it needs to be scaled up for a visible, ghast-like speed.
+const FIREBALL_SPEED = 1.5;
+
 function shootFireball(player) {
-  const dimension = player.dimension;
-  const viewDirection = player.getViewDirection();
-  const headLocation = player.getHeadLocation();
-  const spawnLocation = {
-    x: headLocation.x + viewDirection.x * FIREBALL_LAUNCH_DISTANCE,
-    y: headLocation.y + viewDirection.y * FIREBALL_LAUNCH_DISTANCE,
-    z: headLocation.z + viewDirection.z * FIREBALL_LAUNCH_DISTANCE,
-  };
+  // Everything here runs from an event callback, so an exception is only
+  // ever written to the content log on PC/console - on a phone there is no
+  // way to see it. Catch and report to chat so testing on mobile is
+  // actually possible.
+  try {
+    const dimension = player.dimension;
+    const viewDirection = player.getViewDirection();
+    const headLocation = player.getHeadLocation();
+    const spawnLocation = {
+      x: headLocation.x + viewDirection.x * FIREBALL_LAUNCH_DISTANCE,
+      y: headLocation.y + viewDirection.y * FIREBALL_LAUNCH_DISTANCE,
+      z: headLocation.z + viewDirection.z * FIREBALL_LAUNCH_DISTANCE,
+    };
 
-  const fireball = dimension.spawnEntity("minecraft:fireball", spawnLocation);
-  const projectileComponent = fireball.getComponent("minecraft:projectile");
-  if (projectileComponent) {
+    const fireball = dimension.spawnEntity("minecraft:fireball", spawnLocation);
+    if (!fireball?.isValid) {
+      world.sendMessage("§c[Feuerzauber]§r Fireball-Entity konnte nicht gespawnt werden.");
+      return;
+    }
+
+    const projectileComponent = fireball.getComponent("minecraft:projectile");
+    if (!projectileComponent) {
+      world.sendMessage(
+        "§c[Feuerzauber]§r Fireball hat keine minecraft:projectile-Komponente - Wurf abgebrochen."
+      );
+      return;
+    }
+
     projectileComponent.owner = player;
-    projectileComponent.shoot(viewDirection);
-  }
+    projectileComponent.shoot({
+      x: viewDirection.x * FIREBALL_SPEED,
+      y: viewDirection.y * FIREBALL_SPEED,
+      z: viewDirection.z * FIREBALL_SPEED,
+    });
 
-  dimension.playSound("mob.ghast.fireball", player.location);
+    dimension.playSound("mob.ghast.fireball", player.location);
+    world.sendMessage("§6[Feuerzauber]§r Feuerball abgefeuert!");
+  } catch (error) {
+    world.sendMessage(`§c[Feuerzauber]§r Fehler beim Feuerball-Wurf: ${error}`);
+  }
 }
