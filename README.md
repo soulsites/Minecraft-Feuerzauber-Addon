@@ -17,7 +17,7 @@ RP/                     Resource Pack
   manifest.json
   textures/items/test_sword.png  Eigene Textur fürs Test-Schwert
   textures/items/armor_*.png     Inventar-Icons der Rüstungsteile
-  textures/models/armor/         Rüstungs-Layer-Texturen (blue.png, pink.png)
+  textures/models/armor/         Rüstungs-Layer-Texturen (blue_layer1/2.png, pink_layer1/2.png)
   textures/item_texture.json     Mapping Item -> Textur
   attachables/armor_*.json       Rendering der Rüstung am Spielermodell
   entity/fireball.json           Client-Entity für den Feuerball
@@ -49,12 +49,12 @@ lila und **9 statt 7 Schaden**:
 
 Zwei komplette 4-teilige Rüstungssets (Helm, Brustplatte, Beinschutz,
 Stiefel), passend zum Test-Schwert eingefärbt. Optik über eigene Texturen
-(`RP/textures/models/armor/blue.png` / `pink.png`), auf den vorhandenen
+(`RP/textures/models/armor/{blue,pink}_layer{1,2}.png`), auf den vorhandenen
 Vanilla-Rüstungsgeometrien (`geometry.humanoid.armor.*`) via Attachables
 (`RP/attachables/`) gerendert.
 
 **Wichtig:** Bedrocks Item-System erlaubt bei eigenen Items nur
-Schutzwert (`protection_value`), Haltbarkeit und Rückstoßresistenz als
+Schutzwert (`protection` in `minecraft:wearable`), Haltbarkeit und Rückstoßresistenz als
 einstellbare Werte – die Java-typische "Zähigkeit" (toughness) lässt sich
 für Custom-Items nicht setzen.
 

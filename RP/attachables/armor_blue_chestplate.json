@@ -8,14 +8,14 @@
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/armor/blue",
+        "default": "textures/models/armor/blue_layer1",
         "enchanted": "textures/misc/enchanted_actor_glint"
       },
       "geometry": {
         "default": "geometry.humanoid.armor.chestplate"
       },
       "render_controllers": [
-        "controller.render.armor"
+        "controller.render.armor.v2"
       ],
       "item": {
         "slot": "slot.armor.chest"

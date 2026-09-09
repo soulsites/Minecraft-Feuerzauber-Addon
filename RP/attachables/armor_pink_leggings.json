@@ -8,14 +8,14 @@
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/armor/pink",
+        "default": "textures/models/armor/pink_layer2",
         "enchanted": "textures/misc/enchanted_actor_glint"
       },
       "geometry": {
         "default": "geometry.humanoid.armor.leggings"
       },
       "render_controllers": [
-        "controller.render.armor"
+        "controller.render.armor.v2"
       ],
       "item": {
         "slot": "slot.armor.legs"
