@@ -4,7 +4,7 @@ import { cpSync, existsSync, mkdirSync, rmSync } from "node:fs";
 import { homedir, platform } from "node:os";
 import { join } from "node:path";
 
-const PACK_NAME = "FeuerzauberAddon";
+const PACK_NAME = "Warden";
 
 function getComMojangPath() {
   const home = homedir();

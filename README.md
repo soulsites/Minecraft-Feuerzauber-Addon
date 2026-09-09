@@ -1,4 +1,4 @@
-# Minecraft Feuerzauber Addon
+# Minecraft Warden Addon
 
 Ein Minecraft: Bedrock Edition Add-On, gebaut auf dem offiziellen Mojang
 Add-On-Grundgerüst (Behavior Pack + Resource Pack + Script API).
@@ -118,9 +118,9 @@ wurde, auch ohne dass am Ende ein Feuerball fliegt.
 `npm run package` ausführen (benötigt `zip` unter macOS/Linux bzw.
 PowerShell unter Windows). Das erzeugt in `dist/`:
 
-- `FeuerzauberAddon.mcaddon` – enthält BP **und** RP, zum direkten Import
+- `Warden.mcaddon` – enthält BP **und** RP, zum direkten Import
   (empfohlen).
-- `FeuerzauberAddon_BP.mcpack` / `FeuerzauberAddon_RP.mcpack` – die Packs
+- `Warden_BP.mcpack` / `Warden_RP.mcpack` – die Packs
   einzeln, falls `.mcaddon` mal nicht funktioniert.
 
 Datei(en) aufs Handy übertragen (z. B. per Cloud-Speicher/AirDrop/USB) und

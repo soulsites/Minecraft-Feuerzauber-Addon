@@ -1,8 +1,8 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Feuerzauber Addon",
-    "description": "Feuerzauber Addon - Behavior Pack",
+    "name": "Warden",
+    "description": "Warden - Behavior Pack",
     "uuid": "c4515a08-8706-46d3-bcc0-98bfd97ff9a3",
     "version": [1, 0, 0],
     "min_engine_version": [1, 21, 0]

@@ -14,7 +14,7 @@ import { execFileSync } from "node:child_process";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const DIST = join(ROOT, "dist");
-const PACK_NAME = "FeuerzauberAddon";
+const PACK_NAME = "Warden";
 
 function zip(sourceDir, outFile, entryNames) {
   rmSync(outFile, { force: true });
