@@ -4,21 +4,21 @@
     "name": "Warden",
     "description": "Warden - Behavior Pack",
     "uuid": "c4515a08-8706-46d3-bcc0-98bfd97ff9a3",
-    "version": [1, 0, 8],
+    "version": [1, 0, 9],
     "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "e7678dd2-2b41-4579-81a7-13994c4a5664",
-      "version": [1, 0, 8]
+      "version": [1, 0, 9]
     },
     {
       "type": "script",
       "language": "javascript",
       "uuid": "da1a7e57-f3b6-4c24-ad33-c64f577da9ed",
       "entry": "scripts/main.js",
-      "version": [1, 0, 8]
+      "version": [1, 0, 9]
     }
   ],
   "dependencies": [
@@ -28,7 +28,7 @@
     },
     {
       "uuid": "3200d6f1-d6b2-46b1-beac-0dfd28a972d2",
-      "version": [1, 0, 8]
+      "version": [1, 0, 9]
     }
   ]
 }
