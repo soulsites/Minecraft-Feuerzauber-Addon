@@ -74,7 +74,13 @@ function shootFireball(player) {
       z: headLocation.z + viewDirection.z * FIREBALL_LAUNCH_DISTANCE,
     };
 
-    const fireball = dimension.spawnEntity("minecraft:fireball", spawnLocation);
+    // NOT "minecraft:fireball": the vanilla fireball entity has
+    // is_spawnable/is_summonable set to false in its own definition, so
+    // dimension.spawnEntity() silently refuses to create it (same as
+    // /summon minecraft:fireball failing in vanilla). feuerzauber:fireball
+    // is our own entity (BP/entities/fireball.json) that reuses the vanilla
+    // look/sound but is explicitly spawnable.
+    const fireball = dimension.spawnEntity("feuerzauber:fireball", spawnLocation);
     if (!fireball?.isValid) {
       world.sendMessage("§c[Feuerzauber]§r Fireball-Entity konnte nicht gespawnt werden.");
       return;

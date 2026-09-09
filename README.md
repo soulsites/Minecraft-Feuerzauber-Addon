@@ -49,8 +49,17 @@ Feuerball aus.
 Technisch wird das Item über eine `minecraft:custom_components`-Komponente
 mit `minecraft:use_modifiers` (Aufladedauer) verknüpft. Beim Loslassen prüft
 `scripts/main.js`, wie lange das Item gehalten wurde (`onCompleteUse`), und
-verschießt bei ausreichender Dauer eine `minecraft:fireball`-Entität in
+verschießt bei ausreichender Dauer eine `feuerzauber:fireball`-Entität in
 Blickrichtung des Spielers.
+
+**Wichtig:** Es wird bewusst **nicht** `minecraft:fireball` gespawnt – die
+vanilla Fireball-Entity hat `is_spawnable`/`is_summonable` auf `false`
+gesetzt, `dimension.spawnEntity()` scheitert damit lautlos (genau wie
+`/summon minecraft:fireball` im Vanilla-Spiel fehlschlägt). Stattdessen
+definiert `BP/entities/fireball.json` eine eigene, spawnbare Entity
+`feuerzauber:fireball` mit identischem Verhalten (Explosion, Feuer, Sound),
+und `RP/entity/fireball.json` verweist für die Optik auf die vorhandenen
+Vanilla-Assets (Textur/Modell/Rendercontroller des echten Feuerballs).
 
 **Wichtig:** Das ist eine **eigene, custom Blaze Rod** (`feuerzauber:blaze_rod`)
 – Bedrock erlaubt es nicht, Verhalten an das echte Vanilla-Item
